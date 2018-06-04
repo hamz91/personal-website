@@ -1,0 +1,207 @@
+<html lang="en">
+
+    <head>
+        <title>Hamzah Kurdi's Personal Webpage</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel= "stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+.header {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    background-color: aquamarine;
+    color: black;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: black;
+    height: 100%;
+}
+
+.bg {
+    background-image: url(images/unsplash_background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: rgb(15, 101, 230);
+    color: white;
+}
+
+.navbar l {
+    float: left;
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 100px;
+    text-decoration: none;
+}
+
+.float_right {
+    float: right;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+}
+
+.slideshow_images {
+    width: 100%;
+    height: 80%;
+}
+
+
+.footer {
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(15, 101, 230);
+    font-size: 15px;
+    color: white;
+}
+
+</style>
+
+<body>
+
+<div class="header">
+<h1>Welcome!</h1>
+    <p class="float_left"><i class="fas fa-chess-rook"></i></p>
+    <p>I hope you enjoy your visit.</p>
+</div>
+
+<div class="navbar">
+    <a href="#home" class="w3-hover-red">Home</a>
+    <a href="#portfolio" class="w3-hover-red">My Portfolio</a>
+    <a href="#projects" class="w3-hover-red">Current Projects</a>
+    <a href="#qualifications" class="w3-hover-red">Qualifications</a>
+    <a href="#contact" class="float_right w3-hover-red">Get in touch!</a>
+</div>
+
+
+
+<div class="w3-content w3-display-container slideshow_images">
+
+    <div class="w3-display-container slideShow">
+        <img class="slideshow_images" src= "images/comfort-zone.png">
+        <div class= "w3-display-bottomleft w3-small w3-container w3-padding-16 w3-black">
+            I enjoy being outside my comfort zone. Whether free falling from 13,000 feet or stepping into a new work environment.
+        </div>
+    </div>
+
+    <div class="w3-display-container slideShow">
+        <img class="slideshow_images" src= "images/play_well_others.jpg">
+        <div class= "w3-display-bottomleft w3-small w3-container w3-padding-16 w3-black">
+            I love working in teams, and believe in further learning through collaboration.
+        </div>
+    </div>
+
+    <div class="w3-display-container slideShow">
+        <img class="slideshow_images" src= "images/leader.jpg">
+        <div class= "w3-display-bottomleft w3-small w3-container w3-padding-16 w3-black">
+            I like to take the lead, whether in activities or on projects.
+        </div>
+    </div>
+      
+    <div class= "w3-display-container slideShow">
+        <img class= "slideshow_images" src= "images/say_hello.jpg">
+        <div class= "w3-display-bottomleft w3-small w3-container w3-padding-16 w3-black">
+            If I sound like the type of person you wish to work with, or fancy having a chat to learn further about myself, then get in touch. I'd love to hear from you.
+        </div>
+
+    </div>
+
+    <button class="w3-button w3-display-left w3-black" onclick="nextSlide(-1)"><</button>
+    <button class="w3-button w3-display-right w3-black" onclick="nextSlide(1)">></button>
+
+</div>
+
+<div class="quotes">
+    <p></p>
+</div>
+
+<div class="footer">
+    <h3 class="footer">Raised in London,<br>Educated in Brighton,<br>Formed Worldwide.<br>Follow my journey using the links below.</h3>
+    <a href="#" class="footer fa fa-facebook"></a>
+    <a href="#" class="footer fa fa-twitter"></a>
+    <a href="#" class="footer fa fa-github"></a>
+    <a href="#" class="footer fa fa-linkedin"></a>
+    <p {float:right}>Currently at:<br><a href="#"><img src="images/constructor-labs-badge.png" height= "30" width="50"></a></p>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+<script>
+    var slideNumber = 1;
+    
+    function showSlides(x) {
+             var i;
+             var j = document.getElementsByClassName("slideShow");
+             if (x > j.length) {
+                 slideNumber = 1;
+             }
+             if (x < 1) {
+                 slideNumber = j.length;
+             }
+    
+             for (i = 0; i < j.length; i++) {
+                 j[i].style.display = "none";
+             }
+    
+             j[slideNumber - 1].style.display = "block";
+         }
+    
+    function nextSlide(nxt) {
+            return showSlides(slideNumber += nxt);
+        }
+    
+        showSlides(slideNumber);
+    
+    
+    var languages = [
+            'Hello', 
+            'Bonjour', 
+            'Ciao', 
+            'Olà', 
+            'Hola', 
+            'Namaste', 
+            'Konnichiwa', 
+            'Marhaba', 
+            'Ni Hau'
+        ]
+    
+    var helloNum = Math.floor((Math.random() * languages.length) + 1);
+    
+    var helloIndex = languages[helloNum];
+    
+    var randomHello = document.getElementById("random_hello").value=helloIndex;
+</script>
+
+
+
+
+
+
